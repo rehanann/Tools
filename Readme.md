@@ -1,6 +1,6 @@
 # Server Information Gathering
 
-![picture]image.png
+![picture](image.png)
 
 
 ## Usage
