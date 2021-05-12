@@ -1,5 +1,7 @@
 # Server Information Gathering
 
+![picture]image.png
+
 
 ## Usage
 

@@ -30,6 +30,7 @@ do
     data=data
     [ ! -d "$data/$i" ] 
         mkdir $data/$i
+        mkdir $data/$i/sudoers.d/
         mkdir $data/$i/sssd/conf.d/
         mkdir $data/$i/sssd/pki
         
@@ -42,7 +43,7 @@ do
         done
         
         
-        scp root@$i:/etc/sudoers.d/* $data/$i/
+        scp root@$i:/etc/sudoers.d/* $data/$i/sudoers.d/
         scp root@$i:/etc/sssd/conf.d/ $data/$i/sssd/
         scp root@$i:/etc/sssd/pki/ $data/$i/sssd/pki/
         ssh -o "BatchMode=yes" root@$i "cat /etc/passwd" > $data/$i/passwd.out
