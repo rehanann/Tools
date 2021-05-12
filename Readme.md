@@ -1,5 +1,7 @@
 # Server Information Gathering
 
+execution senerio
+
 ![picture](image.png)
 
 
