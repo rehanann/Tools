@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#########################################################################
+#Purpose: Gather information from linux server and pul data to bastion. #
+#Author: Rehan Anwar                                                    #
+#Date: 12/05/2021                                                       #
+#                                                                       #
+#########################################################################
+
+
 
 filename=""             # Servers list for gathering infomation
 serverip=""             # IDM server ip or FQDN
@@ -36,7 +44,7 @@ do
         
         # collect port info from remote server and dump to bastion host
         # list of ports for IDM https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/ports
-        declare -a ports=("636" "389" "88" "443" "8443")
+        declare -a ports=("636" "389" "88" "443" "8443" "22")
         for port in ${ports[@]}
             do
             ssh -o "BatchMode=yes" root@$i "nc -zv -w 5 $IDMserver $port" 2>&1 | tee -a $data/$i/ports.out
